@@ -1,0 +1,51 @@
+body{
+  overflow-x: hidden;
+}
+.dontScroll{
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.container{
+  --n: 1;
+  display: flex;
+  align-items: center;
+  overflow-y: hidden;
+  height: 50vw; 
+  max-height: 100vh;
+  /* in order to get rid of horizontal scroll fit the width of the container to the total width of its children */
+  width: calc(100% * var(--n));
+
+  /* fraction * complete length = fraction length */
+  transform: translateX(
+    calc( 
+      (var(--i, 0) / var(--n)) * -100% + var(--extra, 0px)
+      ) 
+  );
+  
+}
+
+.smooth{
+  transition: transform 0.3s ease-out;
+}
+
+.wrapper{
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  pointer-events: none;
+}
+
+img{
+  width: calc(100% / var(--n));
+  /* The img should be active de pointer event(click click-down...) */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  pointer-events: none;
+}
