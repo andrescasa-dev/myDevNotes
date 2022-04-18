@@ -15,8 +15,9 @@ Tells to the computer **what to do** and delegates the "how to do it" to another
 ## What is a pure function?
 it's a function that always return the same value for the same parameter
 
-* same parameter => always same answer.
+* Same parameter => always same answer.
 * Predictable
+* The parameter never change its value.
 
 
 ``` js
