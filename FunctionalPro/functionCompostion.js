@@ -1,3 +1,4 @@
+//============================================================ using only one set of arguments============================================================//
 // consiguiendo los atributes para las etiquetas HTML
 const attributesToString = (obj = {}) => {
   const ENTRIES = Object.entries(obj);
@@ -28,7 +29,8 @@ const createTag = (tag) => {
   return TAG;
 };
 
-createTag({tag:“h1”, attr:{“class”: “Success”}})(“Galletas mmmm”);
+let result = createTag({tag:"h1", attr:{"class": "Success"}})("Galletas mmmm");
+console.log(result);
 
 //============================================================ using only one set of arguments============================================================//
 function createTagAttr(obj, content = ""){
@@ -45,5 +47,25 @@ function createTag(tag, content){
   return TAG_string;
 }
 
-createTag({tag:“h1”, attr:{“class”: “Success”}}, “Galletas mmmm”);// <h1 class="success"> Galletas mmm</h1>
-createTag("h1", “Galletas mmmm”); // <h1> Galletas mmm</h1>
+let result2 = createTag({tag:"h1", attr:{"class": "Success"}}, "Galletas mmmm");// <h1 class="success"> Galletas mmm</h1>
+let result3 = createTag("h1", "Galletas mmmm"); // <h1> Galletas mmm</h1>
+console.log(result2);
+console.log(result3);
+
+//============================================================ Example============================================================//
+
+
+const toSlug__row = input => encodeURIComponent(
+  input.split(' ')
+    .map(str => str.toLowerCase())
+    .join('-')
+);
+
+const toSlug__composed = pipe(
+  split(' '),
+  map(toLowerCase),
+  join('-'),
+  encodeURIComponent
+);
+
+
