@@ -49,15 +49,19 @@ in order to be accessible, the **WCAG 2.0** have to be respected.
 ![](https://i.postimg.cc/BvcZhw68/Screenshot-from-2022-04-20-10-35-20.png)
 
 # Typography
+
+![](https://i.postimg.cc/85w9RmZ6/Screenshot-from-2022-04-26-08-37-24.png)
+
 * font-family: max three
 * line-hight
 * hierarchy: what is the path that may follow the users eyes. What is more important.
 
-# Composición
-Para poder desarrollar una buena composición se debe tener en cuenta los siguientes conceptos.
+# <mark>Color</mark>
+The most important fundamental
 
-## Proximidad
-![Screenshot from 2022-04-08 10-45-58.png](https://static.platzi.com/media/user_upload/Screenshot%20from%202022-04-08%2010-45-58-be3a3703-8369-4308-80cc-a788e9798e05.jpg)
+## Color psychology.
+¿What the company wants to inspire?
 
-Para agrupar elementos.
+## Harmony: How to combine colors
+![](https://i.postimg.cc/SRG8VqRZ/Screenshot-from-2022-04-26-09-13-13.png)
 
