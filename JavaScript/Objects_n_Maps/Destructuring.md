@@ -1,0 +1,2 @@
+# Destructuring
+[hacks Mozilla](https://hacks.mozilla.org/2015/05/es6-in-depth-destructuring/)

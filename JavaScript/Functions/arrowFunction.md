@@ -64,6 +64,20 @@ obj.b(); // prints undefined, Window {...} (or the global object)
 obj.c(); // prints 10, Object {...}
 
 ```
+
+```js
+const myObject = {
+  sayHi() {
+    console.log('hi')  
+  },
+  thisArrow: () => console.log(this),
+  thisFunction(){console.log(this)}
+}
+
+myObject.thisArrow() // return window
+myObject.thisFunction() // return myObject
+
+```
 it was created for callbacks and clean up our code. Remember the use of callbacks create hight order functions.
 
 ```js
