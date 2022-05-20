@@ -92,3 +92,18 @@ for (var [,value] of map) {
 }
 
 ```
+
+# spread object operator
+it was added recently in 2020
+
+```js
+
+const user = {
+  username: "ReedBarger",
+  email: "reed@gmail.com",
+  password: "mypassword"  
+};
+
+cons newUser = { ...user, verified: false};
+```
+same as the spread operator of arrays.
