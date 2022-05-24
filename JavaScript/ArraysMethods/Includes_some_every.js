@@ -1,5 +1,5 @@
-//all return boolean values
 
+//all return boolean values
 const users = [
   {name: "andres", isLogged: false},
   {name: "camilo", isLogged: false},
