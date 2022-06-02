@@ -33,6 +33,7 @@ myObject.bind(thisObject); //this: myObject, not executed yet
 ```
 
 # New binding
+bind the "new object created" as the "this"
 
 # Lexical binding
 the **this** is establish depending on the scope in which it was declared.
