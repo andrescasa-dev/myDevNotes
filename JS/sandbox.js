@@ -1,9 +1,13 @@
 /* -------------------------------- Remember -------------------------------- */
+/* * Think first: what is problem? and then, how can i solve it?
 /* * Select the proper data structure (or if it doesn't need ir)
 /* -------------------------------- Remember -------------------------------- */
 
-getDiceHTML(){
-  return ;
+function pigIt(str){
+  return str.split(' ').map(word =>{
+    let isValidWord = /^[a-zA-Z]+$/.exec(word)
+    return isValidWord ? `${word.slice(1)}${word.charAt(0)}ay` : word;
+  }).join(' ')
 }
 
-(diceCount) =>  () => this.getDiceRolledArray().reduce((acc, dice) => acc + `<div class="dice">${dice}</div>`, '')
+console.log(pigIt('Pig latin is cool'));

@@ -4,7 +4,7 @@ modify the original array
 ## splice()
 ```js
 let myArray = [0,1,2,3,4]
-let newArray = myArray.slice(1,3) //[1,2,3.]
+let newArray = myArray.splice(1,3) //[1,2,3.]
 console.log(myArray) //[0,3,4]
 ```
 it could be reading like "start deleting/replacing from 1, 3 times. "
