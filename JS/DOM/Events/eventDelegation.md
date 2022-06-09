@@ -33,3 +33,15 @@ its better delegate the listener to common parent because we can control the **E
     * title (with some event)
 
 click in the post and all the events would be lunched.
+
+## Another example
+```js
+
+//log the text of all h1 h2 an h3 of the page:
+
+document.addEventListener('click', (e) => {
+  if(e.target.matches('h1,h2,h3'))
+  console.log(e.target.innerText);
+})
+
+```
