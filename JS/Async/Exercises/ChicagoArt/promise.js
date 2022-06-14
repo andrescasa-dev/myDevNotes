@@ -25,16 +25,12 @@ const displayImages = (json) => {
   mount.appendChild(imgsFragment)
 }
 
-async function fetchImage(){
-  try{
-    const response = await fetch(`${AIC}?page=1&limit=100&fields=image_id`);
+fetch(`${AIC}?page=1&limit=100&fields=image_id`)
+  .then( response =>{
     if(!response.ok) throw new Error(response.status)
-    const json = await response.json();
+    return response.json();
+  })
+  .then( json => {
     displayImages(json);
-  }
-  catch(e){
-    alert(e);
-  }
-}
-
-fetchImage();
+  })
+  .catch( e => console.error(e))

@@ -4,6 +4,8 @@ API => myjS => fetch() => Response => DATA
 
 It's up to fetch the interaction between de api and my program. Fetch use http methods.
 
+> fetch don't throw eny error, so we have to handle it manually.
+
 So, for the actual data I can access to the body of the response (just using .json()) or even the status of the response, among other things.
 
 # fetch function
@@ -25,7 +27,8 @@ fetch(`${rootUrl}/posts`,{
   .then(data => console.log(data));
 ```
 
-## handling errors
+## Handling errors
+fetch don't throw eny error, so we have to handle it manually.
 
 ```js
 fetch(`${rootUrl}/posts`)

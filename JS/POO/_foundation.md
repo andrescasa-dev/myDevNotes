@@ -11,6 +11,9 @@ the user (developer user) doesn't know how some object work inside, it doesn't m
 let share code between father and children classes **less code**
 
 ## polymorphism
+
+[practical example](https://www.youtube.com/watch?v=bblFTvuk4pY&ab_channel=Absolute)
+
 is just inherit a method an change its behavior in each child. set it in the father guarantee its existence when we don't know what type of class is
 
 let execute a method despite the class of the object:
