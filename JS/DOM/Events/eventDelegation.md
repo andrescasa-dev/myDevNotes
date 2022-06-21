@@ -10,7 +10,7 @@ Delegates the events handler to the parent of a bunch of children:
 document.body.addEventListener('click', event => {
   if(event.target.closest('.post')){
       console.log('is post child')
-  }
+  } 
 })
 ```
 
