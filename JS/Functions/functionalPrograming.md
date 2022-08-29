@@ -1,6 +1,7 @@
 # immutability
 function only works with local variables and arguments making copies (avoiding mutations)
 But what about the cost of making big copies, well there is a solution tha provide a solution in which we can avoid mutation and doing a copy efficiently
+
 ## persistent data structures
 you don't copy all the structure, you just copy some reference and other reference still the same
 

@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 200px;
+  height: 200px;
+}
+
+body{
+  display: grid;
+  margin: 15px auto;
+  text-align: center;
+  font-family: sans-serif;
+  max-width: 1240px;
+}
+
+.mount{
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
