@@ -1,0 +1,1 @@
+https://css-tricks.com/responsive-layouts-fewer-media-queries/
