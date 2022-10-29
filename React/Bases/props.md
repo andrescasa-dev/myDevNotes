@@ -49,7 +49,7 @@ function sayHi(props){
 const personList = [{name:"andres", age:19} , {name:"gaia", age:17}]
 
 function App(){
-  const persons = personList.map((personInArr, i) => <Person {...personInArr} id={i} />)
+  const persons = personList.map((personInArr, i) => <Person {...personInArr} key={i} />)
   return(
     <div className="personWrapper">
       {persons}
@@ -64,13 +64,13 @@ the attributes are being passing using a object destructure.
 JSX syntax transform the object like (name:"andres") into HTML like.
 
 ```js
-<Person name = "andres" age = "19"
+<Person name = "andres" age = "19" />
 ```
 ```js
 function person(props){
-  const {name, age, id} = props
+  const {name, age} = props
   return(
-    <div key={id}>
+    <div>
       <h1>{name}</h1>
       <h3>{age}</h1>
     </div>
@@ -78,3 +78,11 @@ function person(props){
 }
 ```
 > the all components should have a key in order to be correct identify.
+
+## Key prop (attribute)
+its important stablish some key for each component for having a efficient page loading.
+
+```js
+const persons = personList.map((personInArr, i) => <Person  key={i} {...personInArr} />)
+```
+Behind the scenes React use keys in order to identify what element has changed, and only modify those.
