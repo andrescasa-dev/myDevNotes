@@ -1,6 +1,7 @@
-[CheatSheet](https://zerotomastery.io/cheatsheets/big-o-cheat-sheet/?utm_source=udemy&utm_medium=coursecontent)
 
 # How well is the solution
+[Course CheatSheet](https://zerotomastery.io/cheatsheets/big-o-cheat-sheet/?utm_source=udemy&utm_medium=coursecontent)
+| [bigOWeb](https://www.bigocheatsheet.com/)
 ## 1. Readable
 that another developer can understand the solution in the most easily way.
 
@@ -51,11 +52,11 @@ the Objective of Big O notation is analyses the behavior of the Operations vs el
 
 the n value must be considered as a huge number (a little like the infinite)
 
-## **Worst case:** 
+## **1. Worst case:** 
 for example in a finding algorithm it's thinking that the element to fin is in the last index.
-## **Drop the constants:**
+## **2. Drop the constants:**
  like 1/2 * n or 2 + n, just drop it
-## **different terms for inputs:** 
+## **3. different terms for inputs:** 
 the n depends in one set of element, could be "m" or "x" as well. its important becouse we have some other "source of elements" we must represented with other letter.
 
 ```js
@@ -65,7 +66,7 @@ the n depends in one set of element, could be "m" or "x" as well. its important 
 }
 //the algo is O(n + m)
 ```
-## Drop all non-dominants
+## 4. Drop all non-dominants
 only keep with the O(something) with the biggest wight
 > n! > 2^n >  n² > n > k
 
