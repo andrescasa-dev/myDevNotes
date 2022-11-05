@@ -39,3 +39,18 @@ so for each re-render is called
 const [counter, setCounter] = useState(0)
 ```
 and `counter` is updated.
+
+## Best Practice setState
+[Read](https://upmostly.com/tutorials/how-to-use-the-setstate-callback-in-react#:~:text=To%20perform%20an%20action%20in,It%20does%20not%20happen%20immediately.)
+
+if you need the old state, instead of using the variable in the declaration moment, let that React decides when is good time to manipulate the **prev value**
+
+```js
+[counter, setCounter] = useState(0);
+const increase () => setCounter(counter + 1)
+```
+> the update of a state is asynchronous,
+```js
+[counter, setCounter] = useState(0);
+const increase () => setCounter((prevCounter) => prevCounter + 1)
+```
