@@ -54,3 +54,6 @@ const increase () => setCounter(counter + 1)
 [counter, setCounter] = useState(0);
 const increase () => setCounter((prevCounter) => prevCounter + 1)
 ```
+
+
+> one setState() is one render, React doesn't accumulate the setter it's just setState() => await render
