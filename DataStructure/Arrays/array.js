@@ -49,28 +49,47 @@ try {
 // Merge a array
 //================//
 
-// what happens if arr1 || arr2 has length === 0
+// first attempt
+
 function merge(arr1, arr2){ 
   let p1 = 0
   let p2 = 0
   const newArr = []
   while( arr1[p1]!== undefined || arr2[p2] !== undefined){
-    if(arr1[p1] !== undefined && arr2[p2] !== undefined){
-      if(arr1[p1] === arr2[p2]){
-        newArr.push(arr1[p1++])
-        newArr.push(arr2[p2++])
-      }
-      else{
-        const valueToSave = arr1[p1] < arr2[p2] ? arr1[p1++] : arr2[p2++]
-        newArr.push(valueToSave);  
-      }
+    if(arr1[p1] === arr2[p2]){
+      newArr.push(arr1[p1++])
+      newArr.push(arr2[p2++])
     }
     else{
-      const valueToSave = arr1[p1] === undefined ? arr2[p2++] : arr1[p1++];
-      newArr.push(valueToSave);
-    }  
+      let valueToSave;
+      const someEmpty = arr1[p1] === undefined || arr2[p2] === undefined
+      if(someEmpty){
+        valueToSave = arr1[p1] !== undefined ? arr1[p1++] : arr2[p2++];
+      }
+      else{
+        valueToSave = arr1[p1] < arr2[p2] ? arr1[p1++] : arr2[p2++]
+      }
+      newArr.push(valueToSave); 
+    }
+  }
+  return newArr;
+}
+
+
+//second attempt
+
+function merge(arr1, arr2){ 
+  let i = 0 , j = 0;  
+  const newArr = []
+  const shouldSave = (em1, em2) => em1 !== undefined && em1 <= em2
+
+  while( arr1[i]!== undefined || arr2[j] !== undefined){
+    const em1 = arr1[i], em2 = arr2[j];
+    shouldSave(em1, em2) && newArr.push(arr1[i++])
+    shouldSave(em2, em1) && newArr.push(arr2[j++])
   }
   return newArr;
 }
 
 console.log(merge([0,4,5,7,8,9],[4,5,6]))
+
