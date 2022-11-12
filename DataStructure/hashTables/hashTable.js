@@ -11,8 +11,6 @@ class HashTable{
     },0)
     return hash
   }
-  // "apple" : 20 => hash: 123
-  // "apple" : 30
   add(key, value){
     const direction = this.getHash(key)
     if(!this.data[direction] || this.data[direction].key == key )
@@ -34,6 +32,17 @@ class HashTable{
     }    
       return undefined
   }
+
+  keys(){
+    let keyList = []
+    for (let bucket of this.data) {
+      while(bucket !== undefined){
+        keyList.push(bucket.key) 
+        bucket = bucket.next
+      }
+    }
+    return keyList
+  }
 }
 
 const myTable = new HashTable(2);
@@ -41,4 +50,5 @@ myTable.add("oranges", 100)
 myTable.add("orangess", 100)
 myTable.add("orangesss", 100)
 const keys = [{oranges: myTable.get("oranges")}, {orangesss: myTable.get("orangesss")}]
-console.log({data: JSON.stringify(myTable.data), keys})
+const myKeys = myTable.keys();
+console.log({data: JSON.stringify(myTable.data), keys, myKeys})
