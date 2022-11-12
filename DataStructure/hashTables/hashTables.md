@@ -49,11 +49,15 @@ one easy solution is implemented a linked list of the buckets
 # literals vs Maps vs Sets ---(complete please)---
 
 ### Literals objects
+  -  aren't optimized for continues mutation. just work for store state
+  -  un-order
   -  key and value
   -  only strings for keys
   -  any data type for values
 
 ### Maps
+  - optimized for continues mutation (changes)
+  - are ordered
   - key and value
   - any data type for keys
   - any data type for values
