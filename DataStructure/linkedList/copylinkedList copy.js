@@ -1,84 +1,117 @@
-class LinkedList{
-  constructor(){
-    this.head = null;
-    this.tail = this.head;
-    this.length = 0
-  }
-
-  insert(index, value){
-    let after = this.head;
-    let prev = null
-    const newNode = new Node(value)
-    if(index >= this.length) return this
-    if(index === 0) return this.prepend(value)
-    if(index === (this.length - 1)) return this.append(value)
+  class LinkedList{
+    constructor(){
+      this.head = null;
+      this.tail = this.head;
+      this.length = 0
+    }
+    traverseTo(index){
+      let pointer = this.head;
+      if(index >= this.length) return null
+      while(index !== 0 ){
+        pointer = pointer.next
+        index--;  
+      }
+      return pointer
+    }
     
-    while(index !== 0 ){
-      prev = after;
-      after = after.next;
-      console.log({prev, after})
-      index--;  
+    insert(index, value){
+      console.log(index)
+      if(index > this.length) return this
+      if(index === 0) return this.prepend(value)
+      if(index === (this.length)) return this.append(value)
+      
+      const newNode = new Node(value)
+      const prev = this.traverseTo(index-1);
+
+      newNode.next = prev.next
+      prev.next = newNode
+
+      this.length++;
+
+      return this
     }
-    newNode.next = prev.next
-    prev.next = newNode
-    this.length++;
-    return this
-  }
 
-  append(value){
-    const newNode = new Node(value)
-    if(this.length === 0){
-      this.tail = newNode
-      this.head = newNode
+    append(value){
+      const newNode = new Node(value)
+      if(this.length === 0){
+        this.tail = newNode
+        this.head = newNode
+      }
+      else{
+        this.tail.next = newNode
+        this.tail = newNode
+      }
+      this.length++;
+      return this
     }
-    else{
-      this.tail.next = newNode
-      this.tail = newNode
+
+    prepend(value){
+      this.length++;
+      const newNode = new Node(value)
+      newNode.next = this.head;
+      this.head = newNode;
+      return this
     }
-    this.length++;
-    return this
-  }
 
-  prepend(value){
-    this.length++;
-    const newNode = new Node(value)
-    newNode.next = this.head;
-    this.head = newNode;
-    return this
-  }
+    delete(index){
+      if(index > this.length) return this
+      if(index === 0) return this.shift()
+      if(index === (this.length - 1)) return this.pop()
 
-  delete(index){
-  }
+      const prev = this.traverseTo(index-1);
+      const current = prev.next
 
-  toString(){
-    let pointer = this.head;
-    let str = ""
-    if(pointer === null) return '[null]==>null'
-    
-    while(pointer !== null){
-      str += `[${pointer.value}]=>`;
-      pointer = pointer.next;
+      prev.next = current.next;
+      current.next = null
+      this.length--
+      return current.value;
     }
-    str += "null"
-    return str
+
+    shift(){
+      const current = this.head
+      this.head = this.head.next
+      current.next = null
+      this.length--
+      return current.value
+    }
+
+    pop(){
+      const prev = this.traverseTo(this.length-2);
+      const deleted = this.tail
+      prev.next = null;
+      this.tail = prev
+      this.length--
+      return deleted.value;
+    }
+
+    toString(){
+      let pointer = this.head;
+      let str = ""
+      if(pointer === null) return '[null]==>null'
+      
+      while(pointer !== null){
+        str += `[${pointer.value}]=>`;
+        pointer = pointer.next;
+      }
+      str += "null"
+      return str
+    }
   }
-}
 
-class Node{
-  constructor(value){
-    this.value = value
-    this.next = null
+  class Node{
+    constructor(value){
+      this.value = value
+      this.next = null
+    }
   }
-}
 
-//transform the array [1,2,3] into a Linked list
+  //transform the array [1,2,3] into a Linked list
 
-const arr = [1,2,3]
-const linkedList = new LinkedList();
-arr.forEach(em => {
+  const arr = [1,2,3]
+  const linkedList = new LinkedList();
+  arr.forEach(em => linkedList.append(em))
   console.log(linkedList.toString(), {length: linkedList.length})
-  linkedList.append(em)
-})
-console.log(linkedList.toString(), {length: linkedList.length})
-linkedList.insert(3,8)
-console.log(linkedList.toString(), {length: linkedList.length})
+
+  let value;
+  value = linkedList.delete(0)
+  console.log(linkedList.toString(), {length: linkedList.length, value, head: linkedList.head?.value})
