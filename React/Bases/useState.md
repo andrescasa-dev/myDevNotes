@@ -57,3 +57,8 @@ const increase () => setCounter((prevCounter) => prevCounter + 1)
 
 
 > one setState() is one render, React doesn't accumulate the setter it's just setState() => await render
+
+# Lazy state initialization
+**why we need it?**
+**when to use it**
+**how to use it**
