@@ -84,6 +84,25 @@
       return deleted.value;
     }
 
+    reverse(){
+      if(this.length < 2) return this
+
+      let prev = null
+      let current = this.head
+      let next = current;
+
+      while(current !== null){
+        next = current.next;
+        current.next = prev;
+        prev = current;
+        current = next;
+      }
+
+      [this.head, this.tail] = [this.tail, this.head];
+      
+      return this
+    }
+
     toString(){
       let pointer = this.head;
       let str = ""
@@ -107,11 +126,45 @@
 
   //transform the array [1,2,3] into a Linked list
 
-  const arr = [1,2,3]
+  const arr = []
   const linkedList = new LinkedList();
   arr.forEach(em => linkedList.append(em))
   console.log(linkedList.toString(), {length: linkedList.length})
+  console.log(linkedList.reverse().toString(), {length: linkedList.length, head: linkedList.head?.value, tail: linkedList.tail?.value})
 
-  let value;
-  value = linkedList.delete(0)
-  console.log(linkedList.toString(), {length: linkedList.length, value, head: linkedList.head?.value})
+
+
+
+function slowDown(){
+
+  const ma = [
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    [1,2,3,4,5,6,7,8],
+    ]
+  
+  ma.forEach(row => row.forEach((em)=>{ma.forEach(row => row.forEach((em)=>{ma.forEach(row => row.forEach((em)=>{ma.forEach(row => row.forEach((em)=>{const result = row[0] + em}))}))}))}))
+  
+
+}
