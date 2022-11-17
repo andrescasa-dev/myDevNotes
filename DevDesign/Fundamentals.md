@@ -69,3 +69,16 @@ The most important fundamental
 Set the importance of an element using the others fundamentals topics.
 
 ![](https://i.postimg.cc/6pytCmjv/Screenshot-from-2022-04-27-08-16-15.png)
+
+
+# mnemotechnic
+
+"Accurate White Space Conquer Terrible Varied Colors"
+
+- A: alignment
+- W: White space
+- S: Scale
+- C: contrast
+- T: typography
+- C: color
+- V: Visual 
