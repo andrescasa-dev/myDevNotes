@@ -80,5 +80,5 @@ Set the importance of an element using the others fundamentals topics.
 - S: Scale
 - C: contrast
 - T: typography
+- V: Visual hierarchy
 - C: color
-- V: Visual 
