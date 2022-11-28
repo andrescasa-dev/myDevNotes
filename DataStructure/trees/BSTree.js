@@ -40,7 +40,6 @@ class tree {
   }
 
   #findPrevNode(value){
-    console.log("the root node: " + this.root.value)
     if(this.root === null) return null
     let pointer = this.root
     let prev = null
@@ -67,9 +66,11 @@ class tree {
 
   #findSuccessorNode(initNode){
     let successor = initNode.right;
+    console.log({successor})
     let prev = null;
+    
     if(successor){
-      if(successor.left) [successor, prev] = this.#traverseAllToLeft(successor)
+      if(successor.left) {[successor, prev] = this.#traverseAllToLeft(successor)}
       [successor, prev] = [successor, null]
     }
     else{
@@ -78,29 +79,37 @@ class tree {
     return [successor, prev];
   }
 
-  delete(value) {    
+  getDirection(boolean){
+    return boolean ? 'left' : right;
+  }
+
+  #direction({from, to, reverse = false}){
+    let direction = from.value > to.value ? 'left' : 'right'
+    if(reverse) direction = direction === 'left' ? 'right' : 'left'
+    console.log({direction})
+    return direction
+  }
+
+
+  delete(value) {
     const [prevTarget, target] = this.#findPrevNode(value)
     const [successor, prevSuccessor] = this.#findSuccessorNode(target) 
-
-    console.log({prevTarget, target,successor, prevSuccessor})
     if(!prevTarget && !successor) return null
     if(!prevTarget || target === this.root) this.root = successor
     else{
-      const successorDirection = successor.value < prevTarget.value ? 'left' : 'right'
-      prevTarget[successorDirection] = successor  
-    } 
+      prevTarget[this.#direction({from:prevTarget, to:successor})] = successor
+    }
     if(successor){
       if(prevSuccessor){
-        const successorDirection = successor.value < prevSuccessor.value ? 'left' : 'right' // this can be better written 
-        prevSuccessor[successorDirection] = null;
-        successor.right = target.right
-        successor.left = target.left
+        prevSuccessor[this.#direction({from:prevSuccessor, to:successor})] = null;
+        [successor.right, successor.left] = [target.right, target.left]
       }
-      const oppositeSuccessorDirection = successor.value < target.value ? 'right' : 'left'
-      successor[oppositeSuccessorDirection] = target[oppositeSuccessorDirection];
+      else{
+        const oppositeDirection = this.#direction({reverse:true, from:target, to:successor})
+        successor[oppositeDirection] = target[oppositeDirection];
+      }
     }
-    target.right = null
-    target.left = null
+    [target.right, target.left] = [null, null]
     return this
   }
 }
@@ -121,9 +130,10 @@ myTree.insert(10)
 myTree.insert(9)
 myTree.insert(8)
 myTree.insert(12)
-console.log("delete: " + myTree.delete(9))
+console.log("delete: " + myTree.delete(7))
 
 console.log("======tree======")
+console.log("the root node: " + myTree.root.value)
 console.log(JSON.stringify(traverse(myTree.root)))
 // console.log( myTree.delete(8))
 
