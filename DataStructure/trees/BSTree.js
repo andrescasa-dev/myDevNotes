@@ -51,7 +51,7 @@ class tree {
       prev = pointer;
       pointer = pointer[getDirection()]
     }
-    return null;
+    return [null, null];
   }
 
   #traverseAllToLeft(initNode){
@@ -93,6 +93,7 @@ class tree {
 
   delete(value) {
     const [prevTarget, target] = this.#findPrevNode(value)
+    if(target === null) return null
     const [successor, prevSuccessor] = this.#findSuccessorNode(target) 
     if(!prevTarget && !successor) return null
     if(!prevTarget || target === this.root) this.root = successor
@@ -130,7 +131,7 @@ myTree.insert(10)
 myTree.insert(9)
 myTree.insert(8)
 myTree.insert(12)
-console.log("delete: " + myTree.delete(7))
+console.log("delete: " + myTree.delete(0))
 
 console.log("======tree======")
 console.log("the root node: " + myTree.root.value)
