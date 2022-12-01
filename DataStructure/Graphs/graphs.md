@@ -20,6 +20,7 @@ register all the edges (or combinations of nodes).
 ```js
 //       edge  edge  edge  edge
 edges= [[0,2],[2,1],[2,3],[3,1]]
+//        0     1     2      3
 ```
 
 ## Adjacent list
