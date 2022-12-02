@@ -53,3 +53,15 @@ Robin.kill(Jerry)
 console.log(Robin)
 
 
+const talker = (state) => ({
+    talk: () => {
+      console.log(state.name)
+    }
+  })
+
+const user = () => ({name:"andres"})
+
+const compose = (arg) => arg.reduce((obj,curr)=>curr(obj),{})
+
+const andresTalker = compose([talker])(user)
+andresTalker.talk()
