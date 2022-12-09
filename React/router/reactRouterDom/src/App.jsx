@@ -5,9 +5,9 @@ function App(props) {
   return (
     <div>
       <h1>Hello Word!</h1>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      <Link to="/menu">Menu</Link>
+      <Link to="/">App</Link>
+      <Link to="/aboutMore">About</Link>
+      <Link to="/home">Home</Link>
     </div>
   );
 }
