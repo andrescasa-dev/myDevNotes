@@ -37,14 +37,14 @@ function mergeSortFirstTry(arr) {
 
 // 3 2 1 4   
 
-function myMergeSort(arr) {
+export default function myMergeSort(arr) {
   if (arr.length === 1) {
     return arr
   }
   const middle = Math.ceil(arr.length / 2)
   const left = myMergeSort(arr.slice(0, middle)) // [2,3]
   const right = myMergeSort(arr.slice(middle)) // [1,4]
-  return merge(left, right)
+  return mergeVariation(left, right)
 }
 /**
  * 
@@ -64,7 +64,6 @@ function merge(left, right) {
   return result.concat(left.slice(i), right.slice(j))
 }
 
-console.log(merge([3, 4], [5, 6]))
 
 //variation of function merge
 function mergeVariation(left, right) {
@@ -77,5 +76,4 @@ function mergeVariation(left, right) {
   return result.concat(left, right)
 }
 
-
-export default myMergeSort
+console.log(myMergeSort([4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1,4,3,2,1]))

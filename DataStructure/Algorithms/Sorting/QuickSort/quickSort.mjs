@@ -1,6 +1,6 @@
-const example = [6,28,28,32,12,20,4,35,3,13,16]
+const example = [3,5,2,8,32,6,7]
 
-function myQuickSort(arr){
+export default function myQuickSort(arr){
   if(arr.length <= 1){
     return arr
   }
