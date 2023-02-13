@@ -4,7 +4,6 @@ import App from './App'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ErrorUI from './assets/Components/ErrorUI'
-import Home from './Components/Home'
 import About from './Components/About'
 import BooksList from './Components/BooksList'
 import booksData from './data/books'
@@ -15,17 +14,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     errorElement: <ErrorUI />
-  },
-  {
-    path: "/home",
-    element: <Home />,
-    children: [
-      {
-        path: "kitchen",
-        element: <h1>Kitchen</h1>,
-        errorElement: <ErrorUI />
-      }
-    ]
   },
   {
     path: "/home/nextHome",

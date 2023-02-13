@@ -1,7 +1,8 @@
 import React from 'react';
-import { useLoaderData, Link, json } from 'react-router-dom'
+import { useLoaderData, Link, useLocation } from 'react-router-dom'
 
 function BooksList(props) {
+  console.log(useLocation())
   const booksData = useLoaderData()
   const books = booksData.map(book => (
     <li key={book.id}>

@@ -35,13 +35,15 @@ function mergeSortFirstTry(arr) {
 //        O(n log(n))
 // ============================
 
+// 3 2 1 4   
+
 function myMergeSort(arr) {
   if (arr.length === 1) {
     return arr
   }
   const middle = Math.ceil(arr.length / 2)
-  const left = myMergeSort(arr.slice(0, middle))
-  const right = myMergeSort(arr.slice(middle))
+  const left = myMergeSort(arr.slice(0, middle)) // [2,3]
+  const right = myMergeSort(arr.slice(middle)) // [1,4]
   return merge(left, right)
 }
 /**

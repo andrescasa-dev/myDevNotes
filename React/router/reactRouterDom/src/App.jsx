@@ -5,9 +5,13 @@ function App(props) {
   return (
     <div>
       <h1>Hello Word!</h1>
-      <Link to="/">App</Link>
-      <Link to="/aboutMore">About</Link>
-      <Link to="/home">Home</Link>
+      <nav>
+        <ul>
+          <li><Link to="/">App</Link></li>
+          <li><Link to="/aboutMore">About</Link></li>
+          <li><Link to="./bookList">BookList</Link></li>
+        </ul>
+      </nav>
     </div>
   );
 }
