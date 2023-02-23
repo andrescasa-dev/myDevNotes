@@ -42,8 +42,8 @@ export default function myMergeSort(arr) {
     return arr
   }
   const middle = Math.ceil(arr.length / 2)
-  const left = myMergeSort(arr.slice(0, middle)) // [2,3]
-  const right = myMergeSort(arr.slice(middle)) // [1,4]
+  const left = myMergeSort(arr.slice(0, middle))
+  const right = myMergeSort(arr.slice(middle)) 
   return mergeVariation(left, right)
 }
 /**
