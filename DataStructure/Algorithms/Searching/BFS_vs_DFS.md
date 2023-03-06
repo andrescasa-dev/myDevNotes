@@ -15,8 +15,6 @@ traverse the tree "top to bottom, left to right"
 
 
 
-
-
 ## If you know a solution is not far from the root of the tree:
 BFS
 
